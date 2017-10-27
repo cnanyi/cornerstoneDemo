@@ -24,24 +24,24 @@ ImageViewer = function(root, viewport) {
           self.viewports.push(elem);
           i++;
         }
-    }
+    };
 
     self.getRowsCols = function() {
       var s = self.layout.split(/x/);
       return [parseInt(s[0]), parseInt(s[1])];
-    }
+    };
 
     self.isSingle = function() {
       return self.layout == '1x1';
-    }
+    };
 
     self.getElement = function(item) {
       return self.viewports[item].find('.viewport')[0];
-    }
+    };
 
     self.forEachElement = function(cb) {
       self.viewports.forEach(function(vp, i){
         cb.call(self, vp.find('.viewport')[0], vp, i);
       });
     }
-}
+};

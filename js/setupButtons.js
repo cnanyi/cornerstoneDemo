@@ -96,25 +96,35 @@ function setupButtons(studyViewer) {
         });
     });
 
-    // Play clip
+    // Play clip Stop clip
     $(buttons[10]).on('click touchstart', function() {
-        forEachViewport(function(element) {
-          var stackState = cornerstoneTools.getToolState(element, 'stack');
-          var frameRate = stackState.data[0].frameRate;
-          // Play at a default 10 FPS if the framerate is not specified
-          if (frameRate === undefined) {
-            frameRate = 10;
-          }
-          cornerstoneTools.playClip(element, frameRate);
-        });
+        if ($(buttons[10]).children(0).attr("class") == "fa fa-play"){
+            forEachViewport(function(element) {
+                var stackState = cornerstoneTools.getToolState(element, 'stack');
+                var frameRate = stackState.data[0].frameRate;
+                // Play at a default 10 FPS if the framerate is not specified
+                if (frameRate === undefined) {
+                    frameRate = 10;
+                }
+                cornerstoneTools.playClip(element, frameRate);
+            });
+            $(buttons[10]).children(0).attr("class", "fa fa-stop");
+            $(buttons[10]).attr("title", "停止播放");
+        }else{
+            forEachViewport(function(element) {
+                cornerstoneTools.stopClip(element);
+            });
+            $(buttons[10]).children(0).attr("class", "fa fa-play");
+            $(buttons[10]).attr("title", "播放");
+        }
     });
 
     // Stop clip
-    $(buttons[11]).on('click touchstart', function() {
-        forEachViewport(function(element) {
-            cornerstoneTools.stopClip(element);
-        });
-    });
+    // $(buttons[11]).on('click touchstart', function() {
+    //     forEachViewport(function(element) {
+    //         cornerstoneTools.stopClip(element);
+    //     });
+    // });
 
     // Tooltips
     $(buttons[0]).tooltip();
@@ -128,7 +138,7 @@ function setupButtons(studyViewer) {
     $(buttons[8]).tooltip();
     $(buttons[9]).tooltip();
     $(buttons[10]).tooltip();
+    //$(buttons[11]).tooltip();
     $(buttons[11]).tooltip();
-    $(buttons[12]).tooltip();
 
 };

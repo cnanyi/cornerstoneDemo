@@ -17,9 +17,9 @@
     "tests"
   ],
   "dependencies": {
-    "cornerstone": "^0.13.1",
+    "cornerstone": "^0.13.2",
     "cornerstoneTools": "~0.10.0",
-    "cornerstoneWADOImageLoader": "~0.15.0",
+    "cornerstoneWADOImageLoader": "~0.15.1",
     "cornerstoneWebImageLoader": "~0.5.2",
     "cornerstoneMath": "~0.1.2",
     "image-jpeg2000": "~0.3.1",
