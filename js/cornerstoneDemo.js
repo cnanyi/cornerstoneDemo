@@ -9,7 +9,16 @@ var studyViewerTemplate; // the study viewer template
 loadTemplate("templates/studyViewer.html", function(element) {
     studyViewerTemplate = element;
 });
-
+cornerstoneWADOImageLoader.external.cornerstone = cornerstone;
+var config = {
+  webWorkerPath : 'lib/cornerstoneWADOImageLoaderWebWorker.js',
+  taskConfiguration: {
+    'decodeTask' : {
+      codecsPath: 'cornerstoneWADOImageLoaderCodecs.js'
+    }
+  }
+};
+cornerstoneWADOImageLoader.webWorkerManager.initialize(config);
 // Get study list from JSON manifest
 $.getJSON('studyList.json', function(data) {
   data.studyList.forEach(function(study) {
@@ -55,6 +64,7 @@ $.getJSON('studyList.json', function(data) {
         $(window).trigger('resize');
       });
 
+      // cornerstoneWebImageLoader.external.cornerstone = cornerstone;
       // Now load the study.json
       loadStudy(studyViewerCopy, viewportTemplate, study.studyId + ".json");
     });

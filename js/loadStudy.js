@@ -9,6 +9,7 @@ function loadStudy(studyViewer, viewportModel, studyId) {
         imageViewer.setLayout('1x1'); // default layout
 
         function initViewports() {
+            
             imageViewer.forEachElement(function(el) {
                 cornerstone.enable(el);
                 $(el).droppable({
@@ -71,7 +72,7 @@ function loadStudy(studyViewer, viewportModel, studyId) {
                 for (var i = 0; i < numberOfFrames; i++) {
                     var imageId = series.instanceList[0].imageId + "?frame=" + i;
                     if (imageId.substr(0, 4) !== 'http') {
-                        imageId = "dicomweb://cornerstonetech.org/images/ClearCanvas/" + imageId;
+                        imageId = "dicomweb://localhost/cornerstoneDemo/" + imageId;
                     }
                     stack.imageIds.push(imageId);
                 }
@@ -81,7 +82,7 @@ function loadStudy(studyViewer, viewportModel, studyId) {
                     var imageId = image.imageId;
 
                     if (image.imageId.substr(0, 4) !== 'http') {
-                        imageId = "dicomweb://cornerstonetech.org/images/ClearCanvas/" + image.imageId;
+                        imageId = "dicomweb://localhost/cornerstoneDemo/" + image.imageId;
                     }
                     stack.imageIds.push(imageId);
                 });
