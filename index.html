@@ -1,70 +1,73 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="utf-8">
-  <!-- Support for mobile touch devices -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
-  <!-- CSS -->
-  <!-- Font awesome CSS for tool icons -->
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <!-- Bootstrap CSS -->
-  <link href="lib/bootstrap.min.css" rel="stylesheet">
-  <!-- UI CSS -->
-  <link href="lib/jquery-ui.min.css" rel="stylesheet">
-  <!-- Cornerstone Base CSS -->
-  <link href="lib/cornerstone.min.css" rel="stylesheet">
-  <!-- Cornerstone Demo CSS -->
-  <link href="css/cornerstoneDemo.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <!-- Support for mobile touch devices -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <!-- CSS -->
+    <!-- Font awesome CSS for tool icons -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="lib/bootstrap.min.css" rel="stylesheet">
+    <!-- UI CSS -->
+    <link href="lib/jquery-ui.min.css" rel="stylesheet">
+    <!-- Cornerstone Base CSS -->
+    <link href="lib/cornerstone.min.css" rel="stylesheet">
+    <!-- Cornerstone Demo CSS -->
+    <link href="css/cornerstoneDemo.css" rel="stylesheet">
 </head>
 
 <body>
-  <div id="wrap">
+<div id="wrap">
 
     <!-- Nav bar -->
     <!--<nav class="myNav navbar navbar-default" role="navigation">-->
-      <!--<div class="container-fluid">-->
-        <!--<div class="navbar-header">-->
-          <!--<a class="navbar-brand" href="#">影像查看工具</a>-->
-        <!--</div>-->
+    <!--<div class="container-fluid">-->
+    <!--<div class="navbar-header">-->
+    <!--<a class="navbar-brand" href="#">影像查看工具</a>-->
+    <!--</div>-->
 
-      <!--</div>-->
+    <!--</div>-->
     <!--</nav>-->
 
     <div class='main'>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a id="help" href="#" class="button hidden-xs" style="padding: 5px 10px;">帮助</a></li>
+            <li><a id="about" href="#" class="button hidden-xs" style="padding: 5px 10px;margin-right: 20px">关于</a></li>
+        </ul>
+        <!-- Tabs bar -->
+        <ul id="tabs" class="nav nav-tabs">
+            <li class="active"><a href="#studyList" data-toggle="tab">Study List</a></li>
+        </ul>
 
-      <!-- Tabs bar -->
-      <ul id="tabs" class="nav nav-tabs" >
-        <li class="active"><a href="#studyList" data-toggle="tab">Study List</a></li>
-      </ul>
+        <!-- Tab content -->
+        <div id="tabContent" class="tab-content">
+            <!-- Study list -->
+            <div id="studyList" class="tab-pane active">
+                <div class="row">
+                    <table class="col-md-12 table table-striped">
+                        <thead>
+                        <tr>
+                            <th>患者姓名</th>
+                            <th>患者ID</th>
+                            <th>样本日期</th>
+                            <th>设备</th>
+                            <th>样本说明</th>
+                            <th># 图像数量</th>
+                        </tr>
+                        </thead>
 
-      <!-- Tab content -->
-      <div id="tabContent" class="tab-content">
-        <!-- Study list -->
-        <div id="studyList" class="tab-pane active">
-          <div class="row">
-            <table  class="col-md-12 table table-striped">
-              <thead>
-                <tr>
-                  <th>Patient Name</th>
-                  <th>Patient ID</th>
-                  <th>Study Date</th>
-                  <th>Modality</th>
-                  <th>Study Description</th>
-                  <th># Images</th>
-                </tr>
-              </thead>
-              
-              <tbody id="studyListData">
-                <!-- Table rows get populated from the JSON studyList manifest -->
-              </tbody>
-            </table>
-          </div>
+                        <tbody id="studyListData">
+                        <!-- Table rows get populated from the JSON studyList manifest -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- Study viewer tab content template -->
-  </div>
+        <!-- Study viewer tab content template -->
+    </div>
 </div>
 
 <!-- Javascripts -->
@@ -89,8 +92,8 @@
 
 <!-- include the cornerstone tools library -->
 <script src="lib/cornerstoneTools.js"></script>
-  <!-- include the dicomParser library -->
-  <script src="lib/dicomParser.min.js"></script>
+<!-- include the dicomParser library -->
+<script src="lib/dicomParser.min.js"></script>
 <!-- include the cornerstoneWADOImageLoader library -->
 <script src="lib/cornerstoneWADOImageLoader.min.js"></script>
 <!-- include the cornerstoneWebImageLoader library -->
