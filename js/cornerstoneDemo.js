@@ -82,7 +82,7 @@ $('#tabs a').click (function(e) {
 function resizeMain() {
   var height = $(window).height();
   $('#main').height(height - 50);
-  $('#tabContent').height(height - 50 - 42);
+  $('#tabContent').height(height - 54);
 }
 
 
@@ -92,6 +92,11 @@ $(window).resize(function() {
 });
 resizeMain();
 
+function viewport_click(obj) {
+  $(".viewportWrapper").removeClass('active');
+  $(obj).addClass('active');
+  return false;
+}
 
 // Prevent scrolling on iOS
 document.body.addEventListener('touchmove', function(e) {

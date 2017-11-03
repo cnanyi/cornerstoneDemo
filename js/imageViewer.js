@@ -24,6 +24,9 @@ ImageViewer = function(root, viewport) {
           self.viewports.push(elem);
           i++;
         }
+        if (self.viewports.length > 0){
+            self.viewports[0].addClass('active');
+        }
     };
 
     self.getRowsCols = function() {

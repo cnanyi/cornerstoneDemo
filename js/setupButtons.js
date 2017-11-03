@@ -18,14 +18,18 @@ function setupButtons(studyViewer) {
     $(buttons[1]).on('click touchstart', function() {
         disableAllTools();
         forEachViewport(function(element) {
-            var viewport = cornerstone.getViewport(element);
-            // Toggle invert
-            if (viewport.invert === true) {
-                viewport.invert = false;
-            } else {
-                viewport.invert = true;
+
+            if ($(element).parent().hasClass('active')){
+                var viewport = cornerstone.getViewport(element);
+                // Toggle invert
+                if (viewport.invert === true) {
+                    viewport.invert = false;
+                } else {
+                    viewport.invert = true;
+                }
+                cornerstone.setViewport(element, viewport);
             }
-            cornerstone.setViewport(element, viewport);
+
         });
     });
 
@@ -100,45 +104,46 @@ function setupButtons(studyViewer) {
     $(buttons[10]).on('click touchstart', function() {
         if ($(buttons[10]).children(0).attr("class") == "fa fa-play"){
             forEachViewport(function(element) {
-                var stackState = cornerstoneTools.getToolState(element, 'stack');
-                var frameRate = stackState.data[0].frameRate;
-                // Play at a default 10 FPS if the framerate is not specified
-                if (frameRate === undefined) {
-                    frameRate = 10;
+                if ($(element).parent().hasClass('active')) {
+                    var stackState = cornerstoneTools.getToolState(element, 'stack');
+                    var frameRate = stackState.data[0].frameRate;
+                    // Play at a default 10 FPS if the framerate is not specified
+                    if (frameRate === undefined) {
+                        frameRate = 10;
+                    }
+                    cornerstoneTools.playClip(element, frameRate);
                 }
-                cornerstoneTools.playClip(element, frameRate);
             });
             $(buttons[10]).children(0).attr("class", "fa fa-stop");
             $(buttons[10]).attr("title", "停止播放");
         }else{
             forEachViewport(function(element) {
-                cornerstoneTools.stopClip(element);
+                if ($(element).parent().hasClass('active')){
+                    cornerstoneTools.stopClip(element);
+                }
             });
             $(buttons[10]).children(0).attr("class", "fa fa-play");
             $(buttons[10]).attr("title", "播放");
         }
     });
 
-    // Stop clip
-    // $(buttons[11]).on('click touchstart', function() {
-    //     forEachViewport(function(element) {
-    //         cornerstoneTools.stopClip(element);
-    //     });
-    // });
-
     // Tooltips
-    $(buttons[0]).tooltip();
-    $(buttons[1]).tooltip();
-    $(buttons[2]).tooltip();
-    $(buttons[3]).tooltip();
-    $(buttons[4]).tooltip();
-    $(buttons[5]).tooltip();
-    $(buttons[6]).tooltip();
-    $(buttons[7]).tooltip();
-    $(buttons[8]).tooltip();
-    $(buttons[9]).tooltip();
-    $(buttons[10]).tooltip();
-    //$(buttons[11]).tooltip();
-    $(buttons[11]).tooltip();
+    $(buttons).each(function(index){
+        $(this).tooltip();
+    });
+
+    // $(buttons[0]).tooltip();
+    // $(buttons[1]).tooltip();
+    // $(buttons[2]).tooltip();
+    // $(buttons[3]).tooltip();
+    // $(buttons[4]).tooltip();
+    // $(buttons[5]).tooltip();
+    // $(buttons[6]).tooltip();
+    // $(buttons[7]).tooltip();
+    // $(buttons[8]).tooltip();
+    // $(buttons[9]).tooltip();
+    // $(buttons[10]).tooltip();
+    // //$(buttons[11]).tooltip();
+    // $(buttons[11]).tooltip();
 
 };

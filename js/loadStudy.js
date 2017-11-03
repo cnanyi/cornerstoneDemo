@@ -25,7 +25,7 @@ function loadStudy(studyViewer, viewportModel, studyId) {
         setupButtons(studyViewer);
 
         // layout choose
-        $(studyViewer).find('.choose-layout a').click(function(){
+        $(studyViewer).find('.choose-layout').click(function(){
             var previousUsed = [];
             imageViewer.forEachElement(function(el, vp, i){
                 if (!isNaN($(el).data('useStack'))) {
@@ -33,7 +33,7 @@ function loadStudy(studyViewer, viewportModel, studyId) {
                 }
             });
 
-            var type = $(this).text();
+            var type = $(this).attr('text');
             imageViewer.setLayout(type);
             initViewports();
             resizeStudyViewer();
@@ -44,7 +44,6 @@ function loadStudy(studyViewer, viewportModel, studyId) {
                     useItemStack(item++, v);
                 });
             }
-
             //return false;
         });
 
