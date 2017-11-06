@@ -71,7 +71,7 @@ function loadStudy(studyViewer, viewportModel, studyId) {
                 for (var i = 0; i < numberOfFrames; i++) {
                     var imageId = series.instanceList[0].imageId + "?frame=" + i;
                     if (imageId.substr(0, 4) !== 'http') {
-                        imageId = "dicomweb://localhost/cornerstoneDemo/" + imageId;
+                        imageId = "dicomweb://"+window.location.host+"/cornerstoneDemo/" + imageId;
                     }
                     stack.imageIds.push(imageId);
                 }
@@ -81,7 +81,7 @@ function loadStudy(studyViewer, viewportModel, studyId) {
                     var imageId = image.imageId;
 
                     if (image.imageId.substr(0, 4) !== 'http') {
-                        imageId = "dicomweb://localhost/cornerstoneDemo/" + image.imageId;
+                        imageId = "dicomweb://"+window.location.host+"/cornerstoneDemo/" + image.imageId;
                     }
                     stack.imageIds.push(imageId);
                 });
@@ -194,7 +194,7 @@ function loadStudy(studyViewer, viewportModel, studyId) {
                 if ($(el).data('waiting')) {
                     var ol = vp.find('.overlay-text');
                     if (ol.length < 1) {
-                        ol = $('<div class="overlay overlay-text">Please drag a stack onto here to view images.</div>').appendTo(vp);
+                        ol = $('<div class="overlay overlay-text">请将影像拖拽到这里.</div>').appendTo(vp);
                     }
                     var ow = vp.width() / 2, oh = vp.height() / 2;
                     ol.css({top : oh, left : ow - (ol.width() / 2)}); 

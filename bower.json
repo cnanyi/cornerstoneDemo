@@ -17,16 +17,16 @@
     "tests"
   ],
   "dependencies": {
-    "cornerstone": "^1.0.0",
-    "cornerstoneTools": "~1.0.0",
-    "cornerstoneWADOImageLoader": "~1.0.0",
+    "cornerstone": "^1.0.1",
+    "cornerstoneTools": "~1.0.1",
+    "cornerstoneWADOImageLoader": "~1.0.1",
     "cornerstoneWebImageLoader": "~1.0.0",
     "cornerstoneMath": "~0.1.6",
     "image-jpeg2000": "~0.3.1",
     "bootstrap": "~3.3.7",
-    "hammerjs": "~2.0.4",
+    "hammerjs": "~2.0.8",
     "jquery": "~2.2.4",
-    "dicomParser": "^1.7.5"
+    "dicomParser": "^1.7.6"
   },
   "devDependencies": {
     "qunit": "~1.14.0"
@@ -35,7 +35,7 @@
   "authors": [
     "Chris Hafey"
   ],
-  "homepage": "https://github.com/chafey/cornerstoneDemo",
+  "homepage": "https://cnanyi.cn/git/r/cornerstoneDemo",
   "keywords": [
     "DICOM",
     "medical",
@@ -45,11 +45,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/chafey/cornerstoneDemo.git"
+    "url": "https://cnanyi.cn/git/r/cornerstoneDemo.git"
   },
   "resolutions": {
     "jquery": "^2.2.4",
-    "cornerstone": "^1.0.0",
-    "dicomParser": "^1.7.5"
+    "cornerstone": "^1.0.1",
+    "dicomParser": "^1.7.6"
   }
 }

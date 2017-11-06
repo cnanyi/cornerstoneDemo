@@ -11,13 +11,16 @@ loadTemplate("templates/studyViewer.html", function(element) {
 });
 cornerstoneWADOImageLoader.external.cornerstone = cornerstone;
 var config = {
-  webWorkerPath : 'lib/cornerstoneWADOImageLoaderWebWorker.js',
+  webWorkerPath : 'lib/cornerstoneWADOImageLoaderWebWorker.min.js',
   taskConfiguration: {
     'decodeTask' : {
-      codecsPath: 'cornerstoneWADOImageLoaderCodecs.js'
+      codecsPath: 'cornerstoneWADOImageLoaderCodecs.min.js'
     }
   }
 };
+cornerstoneTools.external.$ = $;
+cornerstoneTools.external.Hammer = Hammer;
+
 cornerstoneWADOImageLoader.webWorkerManager.initialize(config);
 // Get study list from JSON manifest
 $.getJSON('studyList.json', function(data) {
