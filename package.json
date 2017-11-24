@@ -31,7 +31,7 @@
         "load-grunt-tasks": "^0.2.1"
     },
     "dependencies": {
-        "cornerstone-core": "^0.13.1",
+        "cornerstone-core": "^1.1.3",
         "grunt-cli": "^1.2.0"
     }
 }
