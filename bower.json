@@ -19,7 +19,7 @@
   "dependencies": {
     "cornerstone": "^1.1.3",
     "cornerstoneTools": "~1.1.2",
-    "cornerstoneWADOImageLoader": "~1.0.3",
+    "cornerstoneWADOImageLoader": "~1.0.4",
     "cornerstoneWebImageLoader": "~1.0.0",
     "cornerstoneMath": "~0.1.6",
     "image-jpeg2000": "~0.3.1",
