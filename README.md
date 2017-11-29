@@ -39,6 +39,7 @@ Local Demo
 
 - Download nginx web server
 - Modify config like this
+>
 >   server {
 >        listen       80;
 >        server_name  localhost;
@@ -53,5 +54,5 @@ Local Demo
 >        }
 >        ......
 >    }
-
+>
 start nginx server , then you can visit http://localhost/cornerstoneDemo/
