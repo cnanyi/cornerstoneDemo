@@ -71,7 +71,7 @@ function loadStudy(studyViewer, viewportModel, studyId) {
                 for (var i = 0; i < numberOfFrames; i++) {
                     var imageId = series.instanceList[0].imageId + "?frame=" + i;
                     if (imageId.substr(0, 4) !== 'http') {
-                        imageId = "dicomweb://"+window.location.host+"/cornerstoneDemo/" + imageId;
+                        imageId = "dicomweb://"+window.location.host + "/"  + imageId;
                     }
                     stack.imageIds.push(imageId);
                 }
@@ -81,7 +81,7 @@ function loadStudy(studyViewer, viewportModel, studyId) {
                     var imageId = image.imageId;
 
                     if (image.imageId.substr(0, 4) !== 'http') {
-                        imageId = "dicomweb://"+window.location.host+"/cornerstoneDemo/" + image.imageId;
+                        imageId = "dicomweb://"+window.location.host + "/" + image.imageId;
                     }
                     stack.imageIds.push(imageId);
                 });

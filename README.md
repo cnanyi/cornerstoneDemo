@@ -34,25 +34,6 @@ Install
 
 > grunt copy
 
-Local Demo
-=================
-
-- Download nginx web server
-- Modify config like this
->
->   server {
->        listen       80;
->        server_name  localhost;
->
->        #charset koi8-r;
->
->        #access_log  logs/host.access.log  main;
->        ......
->        location /cornerstoneDemo/ {
->            alias   /home/cnanyi/cornerstoneDemo/;
->
->        }
->        ......
->    }
->
-start nginx server , then you can visit http://localhost/cornerstoneDemo/
+Run demo
+================
+> npm start
