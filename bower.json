@@ -17,16 +17,16 @@
     "tests"
   ],
   "dependencies": {
-    "cornerstone": "^2.0.0",
-    "cornerstoneTools": "^1.1.2",
-    "cornerstoneWADOImageLoader": "^2.0.0",
-    "cornerstoneWebImageLoader": "^2.0.0",
+    "cornerstone": "^2.2.2",
+    "cornerstoneTools": "^2.2.0",
+    "cornerstoneWADOImageLoader": "^2.1.1",
+    "cornerstoneWebImageLoader": "^2.1.0",
     "cornerstoneMath": "^0.1.6",
     "image-jpeg2000": "^0.3.1",
     "bootstrap": "^3.3.7",
     "hammerjs": "^2.0.8",
     "jquery": "^2.2.4",
-    "dicomParser": "^1.7.6"
+    "dicomParser": "^1.8.0"
   },
   "devDependencies": {
     "qunit": "~1.14.0"
